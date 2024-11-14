@@ -1,0 +1,131 @@
+// 1. Leap Year Checker
+// This algorithm checks if a given year is a leap year or not.
+ALGORITHM LeapYearChecker
+VAR
+    year: INTEGER;
+
+BEGIN
+    Write("Enter the year");  
+    Read(year);  
+
+    IF (year MOD 4 = 0 AND year MOD 100 <> 0) OR (year MOD 400 = 0) THEN
+        Write(year, " is a leap year.");  // If true, it is a leap year
+    ELSE
+        Write(year, " is not a leap year.");  // If false, it is not a leap year
+    END_IF
+END
+
+
+// 2. Ticket Pricing
+// This algorithm calculates the movie ticket price based on the user's age.
+ALGORITHM TicketPricing
+VAR
+    age: INTEGER;
+    price: STRING;
+
+BEGIN
+    Write("Enter your age");  
+    Read(age);  
+
+    IF age <= 12 THEN
+        price := "$10";  // Children price
+    ELSE IF age >= 13 AND age <= 17 THEN
+        price := "$15";  // Teenagers price
+    ELSE
+        price := "$20";  // Adults price
+    END_IF
+
+    Write("Ticket price is: ", price);  // Output the ticket price
+END
+
+
+// 3. Fibonacci Sequence (Recursion)
+// This algorithm recursively calculates the nth Fibonacci number.
+ALGORITHM Fibonacci
+VAR
+    n, result: INTEGER;
+
+BEGIN
+    Write("Enter the position (n) for the Fibonacci number"); 
+    Read(n); 
+
+    result := FibonacciRecursive(n);  
+
+    Write("The Fibonacci number at position ", n, " is: ", result);  // Output the result
+END
+
+// Recursive function to calculate Fibonacci number
+ALGORITHM FibonacciRecursive(n: INTEGER) RETURNS INTEGER
+BEGIN
+    IF n <= 1 THEN
+        RETURN n;  // Base case: return n if n is 0 or 1
+    ELSE
+        RETURN FibonacciRecursive(n - 1) + FibonacciRecursive(n - 2); 
+    END_IF
+END
+
+
+// 4. Palindrome Checker (Recursion)
+// This algorithm checks if a string is a palindrome (reads the same forwards and backwards).
+ALGORITHM PalindromeChecker
+VAR
+    str: STRING;
+    result: BOOLEAN;
+
+BEGIN
+    Write("Enter a string");  
+    Read(str);  
+
+    result := CheckPalindrome(str);  
+
+    IF result THEN
+        Write("The string is a palindrome.");  // If true, the string is a palindrome
+    ELSE
+        Write("The string is not a palindrome.");  // If false, it is not a palindrome
+    END_IF
+END
+
+// Recursive function to check if a string is a palindrome
+ALGORITHM CheckPalindrome(str: STRING) RETURNS BOOLEAN
+VAR
+    cleanedStr: STRING;
+
+BEGIN
+    cleanedStr := RemoveNonAlphanumeric(str);  
+    IF LENGTH(cleanedStr) <= 1 THEN
+        RETURN TRUE;  // Base case: if string length is 1 or less, it is a palindrome
+    ELSE IF cleanedStr[0] = cleanedStr[LENGTH(cleanedStr) - 1] THEN
+        RETURN CheckPalindrome(SUBSTRING(cleanedStr, 1, LENGTH(cleanedStr) - 2));  
+    ELSE
+        RETURN FALSE;  // If characters don't match, return false
+    END_IF
+END
+
+
+// 5. Power Function (Recursion)
+// This algorithm calculates the result of raising a number to a given power recursively.
+ALGORITHM PowerFunction
+VAR
+    base, exponent, result: INTEGER;
+
+BEGIN
+    Write("Enter the base number");  
+    Read(base);  
+
+    Write("Enter the exponent");
+    Read(exponent);  
+
+    result := CalculatePower(base, exponent);  
+
+    Write(base, " raised to the power of ", exponent, " is: ", result);  // Output the result
+END
+
+// Recursive function to calculate the power of a number
+ALGORITHM CalculatePower(base: INTEGER, exponent: INTEGER) RETURNS INTEGER
+BEGIN
+    IF exponent = 0 THEN
+        RETURN 1;  // Base case: any number raised to power 0 is 1
+    ELSE
+        RETURN base * CalculatePower(base, exponent - 1); 
+    END_IF
+END
