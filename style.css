@@ -1,0 +1,99 @@
+/* Styles généraux */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f4f6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #4a90e2;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.section {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.section:hover {
+    transform: scale(1.03);
+}
+
+/* Styles des titres de section */
+h2 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+/* Styles des entrées et boutons */
+input[type="number"],
+input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus {
+    border-color: #4a90e2;
+}
+
+button {
+    background-color: #4a90e2;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #357ab8;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(1);
+}
+
+/* Styles des résultats */
+.results {
+    margin-top: 15px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.results li {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #e3f2fd;
+    color: #333;
+    font-size: 0.95em;
+    opacity: 0;
+    animation: fadeIn 0.4s forwards;
+}
+
