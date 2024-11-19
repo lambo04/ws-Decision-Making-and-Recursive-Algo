@@ -1,5 +1,5 @@
 function leapYearChecker() {
-    const year = parseInt(document.getElementById("leapYearInput").value, 10);
+    const year = parseInt(document.getElementById("leapYearInput").value.trim(), 10);
     const result = document.getElementById("leapYearResults");
     const message = ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) 
         ? `${year} is a leap year.` 
@@ -10,7 +10,7 @@ function leapYearChecker() {
 }
 
 function ticketPricing() {
-    const age = parseInt(document.getElementById("ticketPricingInput").value, 10);
+    const age = parseInt(document.getElementById("ticketPricingInput").value.trim(), 10);
     const result = document.getElementById("ticketPricingResults");
     let price;
     if (age <= 12) {
@@ -31,7 +31,7 @@ function fibonacciRecursive(n) {
 }
 
 function fibonacci() {
-    const n = parseInt(document.getElementById("fibonacciInput").value, 10);
+    const n = parseInt(document.getElementById("fibonacciInput").value.trim(), 10);
     const result = document.getElementById("fibonacciResults");
     const fib = fibonacciRecursive(n);
     const li = document.createElement("li");
@@ -49,7 +49,7 @@ function checkPalindrome(str) {
 }
 
 function palindromeChecker() {
-    const str = document.getElementById("palindromeInput").value;
+    const str = document.getElementById("palindromeInput").value.trim();
     const result = document.getElementById("palindromeResults");
     const isPalindrome = checkPalindrome(str);
     const li = document.createElement("li");
@@ -65,8 +65,8 @@ function calculatePower(base, exponent) {
 }
 
 function powerFunction() {
-    const base = parseInt(document.getElementById("powerBaseInput").value, 10);
-    const exponent = parseInt(document.getElementById("powerExponentInput").value, 10);
+    const base = parseInt(document.getElementById("powerBaseInput").value.trim(), 10);
+    const exponent = parseInt(document.getElementById("powerExponentInput").value.trim(), 10);
     const result = document.getElementById("powerResults");
     const power = calculatePower(base, exponent);
     const li = document.createElement("li");
